@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Risk Management: Capital Preservation &amp; Mathematical Edge — AUPP Trading Club</title>
+  <meta name="description" content="Trading Club session slide deck on Risk Management, The 3 Pillars of Trading, Position Sizing, 1% Rule, Risk-to-Reward Ratio (RRR), Drawdown Mathematics, and Institutional Trading Discipline for AUPP Trading Club.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Progress Bar -->
+  <div class="deck-progress-bar" id="progressBar"></div>
+
+  <!-- Main Presentation Viewport -->
+  <div class="presentation-viewport" id="presentationViewport">
+    <div class="presentation-stage" id="presentationStage">
+
+      <!-- ==========================================
+           SLIDE 1: COVER
+           ========================================== -->
+      <section class="slide active" id="slide-1">
+        <div class="cover-layout">
+          <img src="assets/logo.png" alt="AUPP Trading Club Logo" class="cover-logo">
+          <div class="cover-badge">AUPP Trading Club • Master Mentee Series</div>
+          <h1 class="cover-title">RISK MANAGEMENT</h1>
+          <div class="cover-underline"></div>
+          <p class="cover-subtitle">
+            Capital Preservation, Position Sizing, &amp; The Mathematical Edge:<br>
+            <strong>The 1% Rule</strong> • <strong>Risk-to-Reward (RRR)</strong> • <strong>Lot Math</strong> • <strong>Drawdown Control</strong>
+          </p>
+          <div style="display: flex; gap: 14px; margin-bottom: 24px; flex-wrap: wrap; justify-content: center;">
+            <span class="badge navy" style="padding: 8px 16px; font-size: 13.5px;">1. Capital Preservation</span>
+            <span class="badge red" style="padding: 8px 16px; font-size: 13.5px;">2. The 1% - 2% Rule</span>
+            <span class="badge green" style="padding: 8px 16px; font-size: 13.5px;">3. Risk-to-Reward (RRR)</span>
+            <span class="badge gold" style="padding: 8px 16px; font-size: 13.5px;">4. Position Sizing Formula</span>
+            <span class="badge purple" style="padding: 8px 16px; font-size: 13.5px;">5. Drawdown Mathematics</span>
+          </div>
+          <div class="cover-footer">
+            <span>AUPP Trading Club</span>
+            <span>•</span>
+            <span>American University of Phnom Penh</span>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="slide-footer-left">AUPP Trading Club • Risk Series</div>
+          <div class="slide-footer-right">
+            <span>Risk Management</span>
+            <span class="slide-number-badge">01</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SLIDE 2: THE 3 PILLARS OF TRADING (TODAY'S TOPIC)
+           ========================================== -->
+      <section class="slide" id="slide-2">
+        <div class="slide-header">
+          <div class="slide-title-group">
+            <div class="slide-pretitle">The Master Framework</div>
+            <h2 class="slide-title">The 3 Pillars of Trading Mastery</h2>
+            <div class="title-underline"></div>
+          </div>
+          <div class="slide-header-brand">
+            <img src="assets/horizontal.png" alt="AUPP Logo" class="slide-header-logo">
+          </div>
+        </div>
+
+        <div class="slide-body" style="justify-content: center; gap: 20px;">
+          <!-- Simple, Clean Interconnected 3 Pillars Diagram -->
+          <div style="width: 100%; flex: 1; display: flex; justify-content: center; align-items: center;">
+            <svg viewBox="0 0 1000 390" width="100%" height="450" style="overflow: visible; max-height: 520px;">
+              <defs>
+                <filter id="simpleHeroGlow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#C8102E" flood-opacity="0.25"/>
+                </filter>
+                <linearGradient id="centerGradient" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#16284F"/>
+                  <stop offset="100%" stop-color="#0D1F3C"/>
+                </linearGradient>
+              </defs>
+
+              <!-- Connecting Conduit Lines -->
+              <!-- Outer Connecting Triangle Path -->
+              <polygon points="500,75 220,300 780,300" fill="none" stroke="#E2E8F0" stroke-width="4" stroke-dasharray="8,8" />
+
+              <!-- Direct Connectors to Center Hub -->
+              <line x1="500" y1="105" x2="500" y2="148" stroke="#2563EB" stroke-width="3.5" stroke-linecap="round"/>
+              <line x1="320" y1="260" x2="445" y2="225" stroke="#C8102E" stroke-width="4" stroke-linecap="round"/>
+              <line x1="680" y1="260" x2="555" y2="225" stroke="#00A868" stroke-width="3.5" stroke-linecap="round"/>
+
+              <!-- Central Convergence Hub -->
+              <g transform="translate(500, 205)">
+                <circle cx="0" cy="0" r="56" fill="#FFFFFF" stroke="#D97706" stroke-width="3.5" filter="drop-shadow(0 4px 12px rgba(217,119,6,0.25))"/>
+                <circle cx="0" cy="0" r="48" fill="url(#centerGradient)" />
+                <text x="0" y="2" font-family="Cinzel" font-size="16" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.5">TRADER</text>
+                <rect x="-35" y="16" width="70" height="15" rx="7.5" fill="#D97706"/>
+                <text x="0" y="26.5" font-family="Montserrat" font-size="8" font-weight="800" fill="#FFFFFF" text-anchor="middle">ALL 3 UNITED</text>
+              </g>
+
+              <!-- Node 1: Strategy (Top) -->
+              <g transform="translate(360, 25)">
+                <rect x="0" y="0" width="280" height="85" rx="14" fill="#FFFFFF" stroke="#1E3A68" stroke-width="2.5" filter="drop-shadow(0 4px 10px rgba(13,31,60,0.06))"/>
+                <rect x="18" y="-10" width="85" height="22" rx="11" fill="#1E3A68"/>
+                <text x="60" y="5" font-family="Montserrat" font-size="10.5" font-weight="800" fill="#FFFFFF" text-anchor="middle">PILLAR 1</text>
+                <text x="140" y="38" font-family="Cinzel" font-size="18" font-weight="800" fill="#0D1F3C" text-anchor="middle">STRATEGY</text>
+                <text x="140" y="62" font-family="Montserrat" font-size="13" font-weight="600" fill="#64748B" text-anchor="middle">Where &amp; When to Enter</text>
+              </g>
+
+              <!-- Node 2: Risk Management (Bottom Left - HERO TODAY) -->
+              <g transform="translate(50, 235)" filter="url(#simpleHeroGlow)">
+                <rect x="0" y="0" width="340" height="125" rx="16" fill="#FFF5F5" stroke="#C8102E" stroke-width="3.5"/>
+                <!-- Hero Badge -->
+                <rect x="18" y="-12" width="165" height="26" rx="13" fill="#C8102E"/>
+                <text x="100" y="5" font-family="Montserrat" font-size="11.5" font-weight="900" fill="#FFFFFF" text-anchor="middle">★ TODAY'S TOPIC ★</text>
+                <text x="170" y="44" font-family="Cinzel" font-size="20" font-weight="900" fill="#C8102E" text-anchor="middle">RISK MANAGEMENT</text>
+                <rect x="125" y="56" width="90" height="20" rx="10" fill="#FEE2E2"/>
+                <text x="170" y="70" font-family="Montserrat" font-size="11" font-weight="800" fill="#991B1B" text-anchor="middle">PILLAR 2</text>
+                <text x="170" y="104" font-family="Montserrat" font-size="14" font-weight="700" fill="#0D1F3C" text-anchor="middle">How Much to Risk &amp; Sizing</text>
+              </g>
+
+              <!-- Node 3: Psychology (Bottom Right) -->
+              <g transform="translate(610, 245)">
+                <rect x="0" y="0" width="340" height="105" rx="14" fill="#FFFFFF" stroke="#00A868" stroke-width="2.5" filter="drop-shadow(0 4px 10px rgba(0,0,0,0.06))"/>
+                <rect x="18" y="-10" width="85" height="22" rx="11" fill="#00A868"/>
+                <text x="60" y="5" font-family="Montserrat" font-size="10.5" font-weight="800" fill="#FFFFFF" text-anchor="middle">PILLAR 3</text>
+                <text x="170" y="44" font-family="Cinzel" font-size="18" font-weight="800" fill="#065F46" text-anchor="middle">PSYCHOLOGY</text>
+                <text x="170" y="74" font-family="Montserrat" font-size="13.5" font-weight="600" fill="#64748B" text-anchor="middle">How to Behave (Discipline &amp; Patience)</text>
+              </g>
+            </svg>
+          </div>
+
+        </div>
+
+        <div class="slide-footer">
+          <div class="slide-footer-left">AUPP Trading Club • Risk Series</div>
+          <div class="slide-footer-right">
+            <span>The 3 Pillars</span>
+            <span class="slide-number-badge">02</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SLIDE 3: EDUCATIONAL DISCLAIMER
+           ========================================== -->
+      <section class="slide" id="slide-3">
+        <div class="slide-header">
+          <div class="slide-title-group">
+            <div class="slide-pretitle">Notice</div>
+            <h2 class="slide-title">Educational Disclaimer</h2>
+            <div class="title-underline"></div>
+          </div>
+          <div class="slide-header-brand">
+            <img src="assets/horizontal.png" alt="AUPP Logo" class="slide-header-logo">
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; flex: 1; margin-bottom: 30px;">
+          <div class="clean-card" style="max-width: 900px; width: 100%; padding: 42px 48px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06); border-radius: 12px;">
+            <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 22px;">
+              <span class="badge red" style="font-size: 13px; font-weight: 800; padding: 6px 14px;">NOTICE</span>
+              <div style="font-size: 19px; font-weight: 700; color: var(--navy-primary);">AUPP Trading Club Official Policy</div>
+            </div>
+
+            <p style="font-size: 16.5px; line-height: 1.7; color: var(--text-dark); margin-bottom: 24px;">
+              The <strong>AUPP Trading Club</strong> is an educational university organization. All slides, mathematical models, position sizing sheets, and risk calculators are prepared solely for educational and simulation purposes.
+            </p>
+
+            <ul class="clean-list" style="margin-bottom: 28px;">
+              <li><strong>We educate</strong> — we do not offer financial advice or trade with student funds.</li>
+              <li>Trading real financial markets carries significant risk of capital loss.</li>
+              <li>Always master your position sizing and mathematical models on a <strong>demo account</strong> before using real capital.</li>
+              <li>Risk management and emotional discipline are the key to long-term survival and compounding success.</li>
+            </ul>
+
+            <div style="text-align: right; font-weight: 700; color: var(--navy-primary); font-size: 15px; border-top: 1.5px solid var(--card-border); padding-top: 16px;">
+              — AUPP Trading Club Executive Committee
+            </div>
+          </div>
+        </div>
+
+        <div class="slide-footer">
+          <div class="slide-footer-left">AUPP Trading Club • Official Policy</div>
+          <div class="slide-footer-right">
+            <span>Disclaimer</span>
+            <span class="slide-number-badge">03</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SLIDE 4: WHAT IS RISK MANAGEMENT? (THE STARTING POINT)
+           ========================================== -->
+      <section class="slide" id="slide-4">
+        <div class="slide-header">
+          <div class="slide-title-group">
+            <div class="slide-pretitle">The Foundation</div>
+            <h2 class="slide-title">What Is Risk Management?</h2>
+            <div class="title-underline"></div>
+          </div>
+          <div class="slide-header-brand">
+            <img src="assets/horizontal.png" alt="AUPP Logo" class="slide-header-logo">
+          </div>
+        </div>
+
+        <div class="slide-body">
+          <div class="split-grid-50-50" style="gap: 22px;">
+            <!-- Left Card: The Simple Reality -->
+            <div class="clean-card navy-top" style="padding: 24px 28px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div class="card-title" style="font-size: 21px; margin-bottom: 10px; color: var(--navy-primary);">
+                  <span>The Simple Truth of Trading</span>
+                  <span class="badge navy">Core Reality</span>
+                </div>
+                <p style="font-size: 15.5px; line-height: 1.6; color: var(--text-body); margin-bottom: 16px;">
+                  No trader, algorithm, or mentor knows <strong>100%</strong> where the next candlestick will go. Every single trade is simply a probability.
+                </p>
+                <div style="background: #F8FAFC; border: 1.5px solid var(--card-border); border-radius: 10px; padding: 16px 18px; margin-bottom: 14px;">
+                  <div style="font-size: 15px; font-weight: 800; color: var(--navy-primary); margin-bottom: 5px;">
+                    🚗 The Car Seatbelt Rule:
+                  </div>
+                  <div style="font-size: 14px; line-height: 1.6; color: var(--text-body);">
+                    You don't wear a seatbelt expecting to crash. You wear it so a sudden mistake doesn't end your journey. In trading, <strong>Risk Management is your seatbelt</strong>.
+                  </div>
+                </div>
+              </div>
+              <div style="background: #EFF6FF; border-left: 4px solid var(--navy-secondary); padding: 12px 16px; border-radius: 0 8px 8px 0; font-size: 14px; color: var(--navy-primary);">
+                <strong>What You Control:</strong> You cannot control the market. You <em>can</em> 100% control how much money you lose if you are wrong.
+              </div>
+            </div>
+
+            <!-- Right: The Two Trader Mindsets -->
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+              <div class="clean-card red-top" style="padding: 18px 22px;">
+                <div class="card-title" style="font-size: 17px; color: var(--bear-red); margin-bottom: 6px;">
+                  <span>❌ The Beginner (Gambler)</span>
+                  <span class="badge red">90% Fail Here</span>
+                </div>
+                <div style="font-size: 14.5px; font-weight: 700; color: #991B1B; margin-bottom: 6px;">
+                  Focuses on Greed: <em>"How much money can I make?"</em>
+                </div>
+                <ul class="bullet-list" style="gap: 6px; font-size: 13.5px;">
+                  <li><span class="bullet-icon cross">✕</span> Bets random large lot sizes without calculation</li>
+                  <li><span class="bullet-icon cross">✕</span> Ignores stop loss; hopes the market comes back</li>
+                  <li><span class="bullet-icon cross">✕</span> 1 or 2 bad trades wipe out their entire account</li>
+                </ul>
+              </div>
+
+              <div class="clean-card green-top" style="padding: 18px 22px;">
+                <div class="card-title" style="font-size: 17px; color: var(--bull-green); margin-bottom: 6px;">
+                  <span>✅ The Smart Trader (Risk Officer)</span>
+                  <span class="badge green">Long-Term Winner</span>
+                </div>
+                <div style="font-size: 14.5px; font-weight: 700; color: #065F46; margin-bottom: 6px;">
+                  Focuses on Defense: <em>"How much could I lose if I'm wrong?"</em>
+                </div>
+                <ul class="bullet-list" style="gap: 6px; font-size: 13.5px;">
+                  <li><span class="bullet-icon check">✓</span> Always caps risk at 1% of account balance</li>
+                  <li><span class="bullet-icon check">✓</span> Accepts small losses as a normal business expense</li>
+                  <li><span class="bullet-icon check">✓</span> Stays calm, survives bad days, and trades tomorrow</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="simple-callout callout-gold" style="font-size: 15.5px; padding: 12px 20px; text-align: center; border-radius: 8px;">
+            <strong>Golden Rule of Survival:</strong> Your #1 job as a trader is not to get rich today — it is to protect your money so you can trade again tomorrow.
+          </div>
+        </div>
+
+        <div class="slide-footer">
+          <div class="slide-footer-left">AUPP Trading Club • Risk Series</div>
+          <div class="slide-footer-right">
+            <span>The Foundation</span>
+            <span class="slide-number-badge">04</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SLIDE 5: 2 SEPARATE EQUITY CURVES (WITH VS WITHOUT RISK MANAGEMENT)
+           ========================================== -->
+      <section class="slide" id="slide-5">
+        <div class="slide-header">
+          <div class="slide-title-group">
+            <div class="slide-pretitle">Visual Proof • 50 Trades Simulated</div>
+            <h2 class="slide-title">The Tale of Two Equity Curves</h2>
+            <div class="title-underline"></div>
+          </div>
+          <div class="slide-header-brand">
+            <img src="assets/horizontal.png" alt="AUPP Logo" class="slide-header-logo">
+          </div>
+        </div>
+
+        <div class="slide-body">
+          <div class="split-grid-50-50" style="gap: 22px; align-items: stretch;">
+            <!-- Left Column: Graph 1 - Trader A (WITH Risk Management) -->
+            <div class="clean-card green-top" style="padding: 16px 20px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                  <div style="font-size: 18px; font-weight: 800; color: var(--bull-green);">
+                    🟢 Trader A: With Risk Management
+                  </div>
+                  <span class="badge green">Compounding (+75%)</span>
+                </div>
+
+                <!-- Graph 1: Green SVG Chart -->
+                <div style="width: 100%; height: 235px; background: #F8FAFC; border: 1.5px solid var(--card-border); border-radius: 8px; padding: 6px 10px; margin-bottom: 10px;">
+                  <svg viewBox="0 0 540 220" width="100%" height="100%" style="overflow: visible;">
+                    <defs>
+                      <linearGradient id="eqGreenGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#00A868" stop-opacity="0.30"/>
+                        <stop offset="100%" stop-color="#00A868" stop-opacity="0.0"/>
+                      </linearGradient>
+                    </defs>
+
+                    <!-- Horizontal Grid Lines -->
+                    <line x1="45" y1="30" x2="495" y2="30" stroke="#E2E8F0" stroke-width="1"/>
+                    <text x="40" y="34" font-family="Montserrat" font-size="10" font-weight="600" fill="#94A3B8" text-anchor="end">$2,000</text>
+
+                    <line x1="45" y1="70" x2="495" y2="70" stroke="#E2E8F0" stroke-width="1"/>
+                    <text x="40" y="74" font-family="Montserrat" font-size="10" font-weight="600" fill="#94A3B8" text-anchor="end">$1,500</text>
+
+                    <!-- Baseline: $1,000 Start -->
+                    <line x1="45" y1="110" x2="495" y2="110" stroke="#D97706" stroke-width="1.8" stroke-dasharray="5,4"/>
+                    <text x="40" y="114" font-family="Montserrat" font-size="10" font-weight="800" fill="#D97706" text-anchor="end">$1,000</text>
+                    <text x="498" y="114" font-family="Montserrat" font-size="9" font-weight="800" fill="#D97706">START</text>
+
+                    <line x1="45" y1="150" x2="495" y2="150" stroke="#E2E8F0" stroke-width="1"/>
+                    <text x="40" y="154" font-family="Montserrat" font-size="10" font-weight="600" fill="#94A3B8" text-anchor="end">$500</text>
+
+                    <line x1="45" y1="190" x2="495" y2="190" stroke="#E2E8F0" stroke-width="1"/>
+                    <text x="40" y="194" font-family="Montserrat" font-size="10" font-weight="600" fill="#94A3B8" text-anchor="end">$0</text>
+
+                    <!-- X-Axis Labels -->
+                    <text x="55" y="208" font-family="Montserrat" font-size="9.5" font-weight="600" fill="#94A3B8" text-anchor="middle">Trade 0</text>
+                    <text x="140" y="208" font-family="Montserrat" font-size="9.5" font-weight="600" fill="#94A3B8" text-anchor="middle">Trade 10</text>
+                    <text x="225" y="208" font-family="Montserrat" font-size="9.5" font-weight="600" fill="#94A3B8" text-anchor="middle">Trade 20</text>
+                    <text x="310" y="208" font-family="Montserrat" font-size="9.5" font-weight="600" fill="#94A3B8" text-anchor="middle">Trade 30</text>
+                    <text x="395" y="208" font-family="Montserrat" font-size="9.5" font-weight="600" fill="#94A3B8" text-anchor="middle">Trade 40</text>
+                    <text x="485" y="208" font-family="Montserrat" font-size="9.5" font-weight="600" fill="#94A3B8" text-anchor="middle">Trade 50</text>
+
+                    <!-- Green Fill -->
+                    <path d="M 55,110 C 80,108 100,105 130,102 C 150,100 170,106 195,96 C 220,86 240,94 270,84 C 300,74 330,82 360,70 C 390,58 420,66 450,54 C 465,48 475,46 485,46 L 485,190 L 55,190 Z" fill="url(#eqGreenGrad)"/>
+
+                    <!-- Green Curve -->
+                    <path d="M 55,110 C 80,108 100,105 130,102 C 150,100 170,106 195,96 C 220,86 240,94 270,84 C 300,74 330,82 360,70 C 390,58 420,66 450,54 C 465,48 475,46 485,46" fill="none" stroke="#00A868" stroke-width="3" stroke-linecap="round"/>
+
+                    <!-- Final Value Pin -->
+                    <circle cx="485" cy="46" r="4.5" fill="#00A868"/>
+                    <circle cx="485" cy="46" r="8" stroke="#00A868" stroke-width="1.2" fill="none" opacity="0.6"/>
+                    <rect x="382" y="24" width="98" height="22" rx="4" fill="#F0FDF4" stroke="#00A868" stroke-width="1.3"/>
+                    <text x="431" y="39" font-family="Montserrat" font-size="10.5" font-weight="800" fill="#065F46" text-anchor="middle">+$750 (+75%) ✓</text>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Key Takeaways Trader A -->
+              <div style="display: flex; flex-direction: column; gap: 7px;">
+                <div style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 6px; padding: 6px 12px; display: flex; align-items: center; justify-content: space-between; font-size: 13px;">
+                  <span><strong style="color: #166534;">✓ 1% Risk Rule:</strong> Max risk capped strictly at $10 per trade</span>
+                  <span style="font-weight: 700; color: #166534; font-size: 12px; background: #DCFCE7; padding: 2px 8px; border-radius: 4px;">Zero Panic</span>
+                </div>
+                <div style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 6px; padding: 6px 12px; display: flex; align-items: center; justify-content: space-between; font-size: 13px;">
+                  <span><strong style="color: #166534;">✓ 1:3 RRR Ratio:</strong> Each winner makes +$30; losers cost -$10</span>
+                  <span style="font-weight: 700; color: #166534; font-size: 12px; background: #DCFCE7; padding: 2px 8px; border-radius: 4px;">Asymmetric</span>
+                </div>
+                <div style="background: #ECFDF5; border-left: 3.5px solid #00A868; padding: 6px 12px; border-radius: 0 6px 6px 0; font-size: 13px; color: #065F46;">
+                  <strong>Outcome:</strong> Steadily compounded $1,000 &rarr; <strong style="color: #047857; font-size: 14px;">$1,750 (+75%)</strong> with minimal drawdown.
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Graph 2 - Trader B (WITHOUT Risk Management) -->
+            <div class="clean-card red-top" style="padding: 16px 20px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                  <div style="font-size: 18px; font-weight: 800; color: var(--bear-red);">
+                    🔴 Trader B: Without Risk Management
+                  </div>
+                  <span class="badge red">Account Blown ($0)</span>
+                </div>
+
+                <!-- Graph 2: Red SVG Chart -->
+                <div style="width: 100%; height: 235px; background: #FFF5F5; border: 1.5px solid #FEE2E2; border-radius: 8px; padding: 6px 10px; margin-bottom: 10px;">
+                  <svg viewBox="0 0 540 220" width="100%" height="100%" style="overflow: visible;">
+                    <defs>
+                      <linearGradient id="eqRedGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#C8102E" stop-opacity="0.25"/>
+                        <stop offset="100%" stop-color="#C8102E" stop-opacity="0.0"/>
+                      </linearGradient>
+                    </defs>
+
+                    <!-- Horizontal Grid Lines -->
+                    <line x1="45" y1="30" x2="495" y2="30" stroke="#FEE2E2" stroke-width="1"/>
+                    <text x="40" y="34" font-family="Montserrat" font-size="10" font-weight="600" fill="#94A3B8" text-anchor="end">$2,000</text>
+
+                    <line x1="45" y1="70" x2="495" y2="70" stroke="#FEE2E2" stroke-width="1"/>
+                    <text x="40" y="74" font-family="Montserrat" font-size="10" font-weight="600" fill="#94A3B8" text-anchor="end">$1,500</text>
+
+                    <!-- Baseline: $1,000 Start -->
+                    <line x1="45" y1="110" x2="495" y2="110" stroke="#D97706" stroke-width="1.8" stroke-dasharray="5,4"/>
+                    <text x="40" y="114" font-family="Montserrat" font-size="10" font-weight="800" fill="#D97706" text-anchor="end">$1,000</text>
+                    <text x="498" y="114" font-family="Montserrat" font-size="9" font-weight="800" fill="#D97706">START</text>
+
+                    <line x1="45" y1="150" x2="495" y2="150" stroke="#FEE2E2" stroke-width="1"/>
+                    <text x="40" y="154" font-family="Montserrat" font-size="10" font-weight="600" fill="#94A3B8" text-anchor="end">$500</text>
+
+                    <!-- Ruin Line: $0 Base -->
+                    <line x1="45" y1="190" x2="495" y2="190" stroke="#EF4444" stroke-width="2"/>
+                    <text x="40" y="194" font-family="Montserrat" font-size="10" font-weight="900" fill="#EF4444" text-anchor="end">$0</text>
+                    <text x="498" y="194" font-family="Montserrat" font-size="9" font-weight="900" fill="#EF4444">RUIN</text>
+
+                    <!-- X-Axis Labels -->
+                    <text x="55" y="208" font-family="Montserrat" font-size="9.5" font-weight="600" fill="#94A3B8" text-anchor="middle">Trade 0</text>
+                    <text x="140" y="208" font-family="Montserrat" font-size="9.5" font-weight="600" fill="#94A3B8" text-anchor="middle">Trade 10</text>
+                    <text x="225" y="208" font-family="Montserrat" font-size="9.5" font-weight="600" fill="#94A3B8" text-anchor="middle">Trade 20</text>
+                    <text x="310" y="208" font-family="Montserrat" font-size="9.5" font-weight="600" fill="#94A3B8" text-anchor="middle">Trade 30</text>
+                    <text x="395" y="208" font-family="Montserrat" font-size="9.5" font-weight="600" fill="#94A3B8" text-anchor="middle">Trade 40</text>
+                    <text x="485" y="208" font-family="Montserrat" font-size="9.5" font-weight="600" fill="#94A3B8" text-anchor="middle">Trade 50</text>
+
+                    <!-- Red Fill -->
+                    <path d="M 55,110 C 75,95 100,70 130,64 C 150,60 165,115 185,126 C 200,135 215,102 235,98 C 255,94 265,148 285,154 C 295,158 305,146 315,144 C 330,142 345,182 365,190 L 485,190 L 55,190 Z" fill="url(#eqRedGrad)"/>
+
+                    <!-- Red Curve -->
+                    <path d="M 55,110 C 75,95 100,70 130,64 C 150,60 165,115 185,126 C 200,135 215,102 235,98 C 255,94 265,148 285,154 C 295,158 305,146 315,144 C 330,142 345,182 365,190" fill="none" stroke="#C8102E" stroke-width="3" stroke-linecap="round"/>
+                    
+                    <!-- Flatline at $0 -->
+                    <line x1="365" y1="190" x2="485" y2="190" stroke="#991B1B" stroke-width="3" stroke-dasharray="6,4"/>
+
+                    <!-- Lucky Peak Pin -->
+                    <circle cx="130" cy="64" r="4.5" fill="#C8102E"/>
+                    <rect x="75" y="38" width="112" height="19" rx="4" fill="#FEF2F2" stroke="#EF4444" stroke-width="1.2"/>
+                    <text x="131" y="51.5" font-family="Montserrat" font-size="9.5" font-weight="800" fill="#991B1B" text-anchor="middle">Lucky Peak ($1,550)</text>
+
+                    <!-- Blown Pin -->
+                    <circle cx="365" cy="190" r="5" fill="#991B1B"/>
+                    <rect x="270" y="138" width="186" height="34" rx="5" fill="#991B1B" filter="drop-shadow(0 2px 6px rgba(0,0,0,0.25))"/>
+                    <text x="363" y="153" font-family="Montserrat" font-size="9.5" font-weight="900" fill="#FFFFFF" text-anchor="middle">💥 ACCOUNT BLOWN ($0)</text>
+                    <text x="363" y="166" font-family="Montserrat" font-size="8.5" font-weight="700" fill="#FECACA" text-anchor="middle">Trade 34 • Margin Call</text>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Key Takeaways Trader B -->
+              <div style="display: flex; flex-direction: column; gap: 7px;">
+                <div style="background: #FEF2F2; border: 1px solid #FECACA; border-radius: 6px; padding: 6px 12px; display: flex; align-items: center; justify-content: space-between; font-size: 13px;">
+                  <span><strong style="color: #991B1B;">✕ Oversized Bets:</strong> Risks 10%–30% per trade ($100–$300)</span>
+                  <span style="font-weight: 700; color: #991B1B; font-size: 12px; background: #FEE2E2; padding: 2px 8px; border-radius: 4px;">Gambling</span>
+                </div>
+                <div style="background: #FEF2F2; border: 1px solid #FECACA; border-radius: 6px; padding: 6px 12px; display: flex; align-items: center; justify-content: space-between; font-size: 13px;">
+                  <span><strong style="color: #991B1B;">✕ Zero Stop Loss:</strong> Holds losing trades in denial hoping for recovery</span>
+                  <span style="font-weight: 700; color: #991B1B; font-size: 12px; background: #FEE2E2; padding: 2px 8px; border-radius: 4px;">Hope Trap</span>
+                </div>
+                <div style="background: #FFF1F2; border-left: 3.5px solid #C8102E; padding: 6px 12px; border-radius: 0 6px 6px 0; font-size: 13px; color: #991B1B;">
+                  <strong>Outcome:</strong> 1 revenge trade wiped out 100% of capital &rarr; <strong style="color: #991B1B; font-size: 14px;">$0 Ruin (Margin Call)</strong> at Trade 34.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="simple-callout callout-gold" style="font-size: 15.5px; padding: 12px 20px; text-align: center; border-radius: 8px;">
+            <strong>The Iron Law of Trading:</strong> A great strategy can make you money, but only <strong>Risk Management</strong> prevents you from going to zero.
+          </div>
+        </div>
+
+        <div class="slide-footer">
+          <div class="slide-footer-left">AUPP Trading Club • Risk Series</div>
+          <div class="slide-footer-right">
+            <span>Equity Curves</span>
+            <span class="slide-number-badge">05</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SLIDE 6: SESSION ROADMAP (5 SIMPLE STEPS)
+           ========================================== -->
+      <section class="slide" id="slide-6">
+        <div class="slide-header">
+          <div class="slide-title-group">
+            <div class="slide-pretitle">Trading Club Session</div>
+            <h2 class="slide-title">Today's 5 Simple Steps</h2>
+            <div class="title-underline"></div>
+          </div>
+          <div class="slide-header-brand">
+            <img src="assets/horizontal.png" alt="AUPP Logo" class="slide-header-logo">
+          </div>
+        </div>
+
+        <div class="slide-body">
+          <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; flex: 1; align-items: stretch;">
+            <!-- Step 1 -->
+            <div class="clean-card navy-top" style="padding: 22px 18px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div style="font-size: 28px; font-weight: 900; color: var(--navy-primary); margin-bottom: 6px;">01</div>
+                <div style="font-size: 17px; font-weight: 800; color: var(--navy-primary); margin-bottom: 8px;">The 1% Rule</div>
+                <p style="font-size: 14px; color: var(--text-body); line-height: 1.55;">
+                  How much cash to risk per trade. Never risk the whole account ($10 on $1,000).
+                </p>
+              </div>
+              <span class="badge navy" style="align-self: flex-start; margin-top: 12px; font-size: 11.5px;">Dollar Cap</span>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="clean-card red-top" style="padding: 22px 18px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div style="font-size: 28px; font-weight: 900; color: var(--red-accent); margin-bottom: 6px;">02</div>
+                <div style="font-size: 17px; font-weight: 800; color: var(--red-accent); margin-bottom: 8px;">Risk 1 to Make 3</div>
+                <p style="font-size: 14px; color: var(--text-body); line-height: 1.55;">
+                  The 1:3 ratio: How to make consistent profit even when losing 60% of trades.
+                </p>
+              </div>
+              <span class="badge red" style="align-self: flex-start; margin-top: 12px; font-size: 11.5px;">Ratio (RRR)</span>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="clean-card green-top" style="padding: 22px 18px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div style="font-size: 28px; font-weight: 900; color: var(--bull-green); margin-bottom: 6px;">03</div>
+                <div style="font-size: 17px; font-weight: 800; color: var(--bull-green); margin-bottom: 8px;">Trade Anatomy</div>
+                <p style="font-size: 14px; color: var(--text-body); line-height: 1.55;">
+                  Visualizing Stop Loss (-1R) and Take Profit (+3R) directly on candlesticks.
+                </p>
+              </div>
+              <span class="badge green" style="align-self: flex-start; margin-top: 12px; font-size: 11.5px;">On The Chart</span>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="clean-card gold-top" style="padding: 22px 18px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div style="font-size: 28px; font-weight: 900; color: var(--gold-accent); margin-bottom: 6px;">04</div>
+                <div style="font-size: 17px; font-weight: 800; color: var(--gold-accent); margin-bottom: 8px;">Pick Lot Size</div>
+                <p style="font-size: 14px; color: var(--text-body); line-height: 1.55;">
+                  3 easy steps to find your exact lot size without guessing or emotional bets.
+                </p>
+              </div>
+              <span class="badge gold" style="align-self: flex-start; margin-top: 12px; font-size: 11.5px;">Precision</span>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="clean-card purple-top" style="padding: 22px 18px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div style="font-size: 28px; font-weight: 900; color: var(--purple-accent); margin-bottom: 6px;">05</div>
+                <div style="font-size: 17px; font-weight: 800; color: var(--purple-accent); margin-bottom: 8px;">Drawdown &amp; Tool</div>
+                <p style="font-size: 14px; color: var(--text-body); line-height: 1.55;">
+                  Why small losses save your account and hands-on position size calculator tool.
+                </p>
+              </div>
+              <span class="badge purple" style="align-self: flex-start; margin-top: 12px; font-size: 11.5px;">Control</span>
+            </div>
+          </div>
+
+          <div class="simple-callout callout-navy" style="font-size: 16px; text-align: center;">
+            <strong>Session Objective:</strong> By the end of this session, you will know the exact dollar risk and lot size before you ever enter a trade.
+          </div>
+        </div>
+
+        <div class="slide-footer">
+          <div class="slide-footer-left">AUPP Trading Club • Risk Series</div>
+          <div class="slide-footer-right">
+            <span>Roadmap</span>
+            <span class="slide-number-badge">06</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SLIDE 7: THE 1% - 2% RISK RULE
+           ========================================== -->
+      <section class="slide" id="slide-7">
+        <div class="slide-header">
+          <div class="slide-title-group">
+            <div class="slide-pretitle">Step 01 • The Golden Rule</div>
+            <h2 class="slide-title">The 1% - 2% Golden Risk Rule</h2>
+            <div class="title-underline"></div>
+          </div>
+          <div class="slide-header-brand">
+            <img src="assets/horizontal.png" alt="AUPP Logo" class="slide-header-logo">
+          </div>
+        </div>
+
+        <div class="slide-body">
+          <div class="split-grid-40-60">
+            <div class="clean-card navy-top">
+              <div class="card-title" style="font-size: 20px; margin-bottom: 8px;">
+                <span>Surviving Losing Streaks</span>
+                <span class="badge navy">Protection Law</span>
+              </div>
+              <p class="card-desc" style="margin-bottom: 12px;">
+                In financial markets, even profitable hedge funds experience <strong>5 to 7 losses in a row</strong> due to normal market randomness.
+              </p>
+              <div class="formula-card" style="padding: 16px 20px; margin-bottom: 12px;">
+                <div class="formula-header">The 1% Rule Equation</div>
+                <div class="formula-display" style="font-size: 19px;">Max Risk = Account Balance &times; 1%</div>
+                <div class="formula-notes">On a $1,000 account, you risk exactly $10 per trade. Never more!</div>
+              </div>
+              <p class="card-desc">
+                When you cap risk at <strong>1%</strong>, a 5-loss streak is just a tiny scrape (-$50). But at <strong>10%</strong>, that same streak cuts your entire account in half!
+              </p>
+            </div>
+
+            <div class="chart-container" style="padding: 18px 22px;">
+              <div class="chart-header">
+                <span class="chart-title-tag">
+                  <span class="legend-dot red"></span> Account Balance After 10 Consecutive Losses ($1,000 Starting)
+                </span>
+                <span class="badge gold">Comparison Matrix</span>
+              </div>
+
+              <table class="styled-table" style="margin-top: 4px;">
+                <thead>
+                  <tr>
+                    <th>Risk Per Trade</th>
+                    <th>Balance Left</th>
+                    <th>Total Loss ($)</th>
+                    <th>Drawdown</th>
+                    <th>Recovery Needed</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="background: #F0FDF4;">
+                    <td><strong style="color: var(--bull-green);">1.0% Risk (Pro)</strong></td>
+                    <td><strong>$904.38</strong></td>
+                    <td>-$95.62</td>
+                    <td><span class="badge green">-9.5%</span></td>
+                    <td><strong>+10.5% (Very Easy)</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong style="color: var(--navy-secondary);">2.0% Risk (Max Cap)</strong></td>
+                    <td><strong>$817.07</strong></td>
+                    <td>-$182.93</td>
+                    <td><span class="badge gold">-18.3%</span></td>
+                    <td><strong>+22.4% (Manageable)</strong></td>
+                  </tr>
+                  <tr style="background: #FFF5F5;">
+                    <td><strong style="color: #D97706;">5.0% Risk (Dangerous)</strong></td>
+                    <td><strong>$598.74</strong></td>
+                    <td>-$401.26</td>
+                    <td><span class="badge gold">-40.1%</span></td>
+                    <td><strong>+67.0% (Difficult)</strong></td>
+                  </tr>
+                  <tr style="background: #FEF2F2;">
+                    <td><strong style="color: var(--bear-red);">10.0% Risk (Gambling)</strong></td>
+                    <td><strong>$348.68</strong></td>
+                    <td>-$651.32</td>
+                    <td><span class="badge red">-65.1%</span></td>
+                    <td><strong style="color: var(--bear-red);">+186.8% (Near Impossible)</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="chart-legend-row" style="margin-top: 16px; font-size: 13px;">
+                <div><span class="legend-dot green"></span> 1% Standard: Safe &amp; Institutional</div>
+                <div><span class="legend-dot gold"></span> 2% Cap: Hard Ceiling for High Confluence</div>
+                <div><span class="legend-dot red"></span> &gt;5%: Guaranteed Account Ruin</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide-footer">
+          <div class="slide-footer-left">AUPP Trading Club • Risk Series</div>
+          <div class="slide-footer-right">
+            <span>The 1% Rule</span>
+            <span class="slide-number-badge">07</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SLIDE 8: RISK-TO-REWARD (RRR)
+           ========================================== -->
+      <section class="slide" id="slide-8">
+        <div class="slide-header">
+          <div class="slide-title-group">
+            <div class="slide-pretitle">Step 02 • Risk-to-Reward</div>
+            <h2 class="slide-title">Risk $1 to Make $3 (The 1:3 Rule)</h2>
+            <div class="title-underline"></div>
+          </div>
+          <div class="slide-header-brand">
+            <img src="assets/horizontal.png" alt="AUPP Logo" class="slide-header-logo">
+          </div>
+        </div>
+
+        <div class="slide-body">
+          <div class="split-grid-55-45">
+            <div class="chart-container">
+              <div class="chart-header">
+                <span class="chart-title-tag">
+                  <span class="legend-dot green"></span> The 40% Win-Rate Simulation (10 Trades at 1:3 RRR)
+                </span>
+                <span class="badge green">Profitable with 60% Loss Rate</span>
+              </div>
+
+              <!-- SVG Visualizing 10 Trades Expectancy -->
+              <div class="chart-svg-wrapper">
+                <svg width="100%" height="280" viewBox="0 0 540 280">
+                  <!-- Zero Line -->
+                  <line x1="40" y1="140" x2="510" y2="140" stroke="#94A3B8" stroke-width="2" stroke-dasharray="4,4" />
+                  <text x="35" y="144" font-family="Montserrat" font-size="12" font-weight="700" fill="#64748B" text-anchor="end">0 R</text>
+
+                  <!-- Grid Guide Lines -->
+                  <line x1="40" y1="45" x2="510" y2="45" stroke="#E2E8F0" stroke-width="1.5" />
+                  <text x="35" y="49" font-family="Montserrat" font-size="12" font-weight="800" fill="#00A868" text-anchor="end">+3 R</text>
+
+                  <line x1="40" y1="175" x2="510" y2="175" stroke="#E2E8F0" stroke-width="1.5" />
+                  <text x="35" y="179" font-family="Montserrat" font-size="12" font-weight="800" fill="#E53E3E" text-anchor="end">-1 R</text>
+
+                  <!-- 10 Trades Bars: L, W, L, L, W, L, W, L, L, W -->
+                  <!-- Trade 1: Loss (-1R) -->
+                  <rect x="55" y="140" width="34" height="35" fill="#FDE8EA" stroke="#E53E3E" stroke-width="1.5" rx="3" />
+                  <text x="72" y="162" font-family="Montserrat" font-size="11" font-weight="700" fill="#C8102E" text-anchor="middle">-1R</text>
+                  <text x="72" y="195" font-family="Montserrat" font-size="10" font-weight="600" fill="#64748B" text-anchor="middle">T1</text>
+
+                  <!-- Trade 2: Win (+3R) -->
+                  <rect x="100" y="45" width="34" height="95" fill="#E6F7F0" stroke="#00A868" stroke-width="2" rx="3" />
+                  <text x="117" y="95" font-family="Montserrat" font-size="12" font-weight="800" fill="#00A868" text-anchor="middle">+3R</text>
+                  <text x="117" y="195" font-family="Montserrat" font-size="10" font-weight="600" fill="#64748B" text-anchor="middle">T2</text>
+
+                  <!-- Trade 3: Loss (-1R) -->
+                  <rect x="145" y="140" width="34" height="35" fill="#FDE8EA" stroke="#E53E3E" stroke-width="1.5" rx="3" />
+                  <text x="162" y="162" font-family="Montserrat" font-size="11" font-weight="700" fill="#C8102E" text-anchor="middle">-1R</text>
+                  <text x="162" y="195" font-family="Montserrat" font-size="10" font-weight="600" fill="#64748B" text-anchor="middle">T3</text>
+
+                  <!-- Trade 4: Loss (-1R) -->
+                  <rect x="190" y="140" width="34" height="35" fill="#FDE8EA" stroke="#E53E3E" stroke-width="1.5" rx="3" />
+                  <text x="207" y="162" font-family="Montserrat" font-size="11" font-weight="700" fill="#C8102E" text-anchor="middle">-1R</text>
+                  <text x="207" y="195" font-family="Montserrat" font-size="10" font-weight="600" fill="#64748B" text-anchor="middle">T4</text>
+
+                  <!-- Trade 5: Win (+3R) -->
+                  <rect x="235" y="45" width="34" height="95" fill="#E6F7F0" stroke="#00A868" stroke-width="2" rx="3" />
+                  <text x="252" y="95" font-family="Montserrat" font-size="12" font-weight="800" fill="#00A868" text-anchor="middle">+3R</text>
+                  <text x="252" y="195" font-family="Montserrat" font-size="10" font-weight="600" fill="#64748B" text-anchor="middle">T5</text>
+
+                  <!-- Trade 6: Loss (-1R) -->
+                  <rect x="280" y="140" width="34" height="35" fill="#FDE8EA" stroke="#E53E3E" stroke-width="1.5" rx="3" />
+                  <text x="297" y="162" font-family="Montserrat" font-size="11" font-weight="700" fill="#C8102E" text-anchor="middle">-1R</text>
+                  <text x="297" y="195" font-family="Montserrat" font-size="10" font-weight="600" fill="#64748B" text-anchor="middle">T6</text>
+
+                  <!-- Trade 7: Win (+3R) -->
+                  <rect x="325" y="45" width="34" height="95" fill="#E6F7F0" stroke="#00A868" stroke-width="2" rx="3" />
+                  <text x="342" y="95" font-family="Montserrat" font-size="12" font-weight="800" fill="#00A868" text-anchor="middle">+3R</text>
+                  <text x="342" y="195" font-family="Montserrat" font-size="10" font-weight="600" fill="#64748B" text-anchor="middle">T7</text>
+
+                  <!-- Trade 8: Loss (-1R) -->
+                  <rect x="370" y="140" width="34" height="35" fill="#FDE8EA" stroke="#E53E3E" stroke-width="1.5" rx="3" />
+                  <text x="387" y="162" font-family="Montserrat" font-size="11" font-weight="700" fill="#C8102E" text-anchor="middle">-1R</text>
+                  <text x="387" y="195" font-family="Montserrat" font-size="10" font-weight="600" fill="#64748B" text-anchor="middle">T8</text>
+
+                  <!-- Trade 9: Loss (-1R) -->
+                  <rect x="415" y="140" width="34" height="35" fill="#FDE8EA" stroke="#E53E3E" stroke-width="1.5" rx="3" />
+                  <text x="432" y="162" font-family="Montserrat" font-size="11" font-weight="700" fill="#C8102E" text-anchor="middle">-1R</text>
+                  <text x="432" y="195" font-family="Montserrat" font-size="10" font-weight="600" fill="#64748B" text-anchor="middle">T9</text>
+
+                  <!-- Trade 10: Win (+3R) -->
+                  <rect x="460" y="45" width="34" height="95" fill="#E6F7F0" stroke="#00A868" stroke-width="2" rx="3" />
+                  <text x="477" y="95" font-family="Montserrat" font-size="12" font-weight="800" fill="#00A868" text-anchor="middle">+3R</text>
+                  <text x="477" y="195" font-family="Montserrat" font-size="10" font-weight="600" fill="#64748B" text-anchor="middle">T10</text>
+
+                  <!-- Summary Callout inside SVG -->
+                  <rect x="30" y="218" width="480" height="46" fill="#0D1F3C" rx="6" />
+                  <text x="270" y="246" font-family="Montserrat" font-size="13" font-weight="800" fill="#FFFFFF" text-anchor="middle">
+                    6 Losses (-6R) + 4 Wins (+12R) = NET PROFIT: +6R (+6% Growth)
+                  </text>
+                </svg>
+              </div>
+            </div>
+
+            <div class="clean-card navy-top">
+              <div class="card-title" style="font-size: 19px; margin-bottom: 8px;">
+                <span>The Minimum Win-Rate Matrix</span>
+                <span class="badge navy">Break-Even</span>
+              </div>
+              <p class="card-desc" style="font-size: 14.5px; margin-bottom: 12px;">
+                You do not need a mythical 90% accuracy. As your Risk-to-Reward increases, your required break-even accuracy drops dramatically:
+              </p>
+              <table class="styled-table" style="font-size: 13.5px;">
+                <thead>
+                  <tr>
+                    <th>Target RRR</th>
+                    <th>Min Win Rate Needed</th>
+                    <th>Feasibility</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>1 : 1</strong></td>
+                    <td>50.0% Win Rate</td>
+                    <td><span class="badge red">Hard</span></td>
+                  </tr>
+                  <tr style="background: #F0FDF4;">
+                    <td><strong>1 : 2</strong></td>
+                    <td><strong>33.3% Win Rate</strong></td>
+                    <td><span class="badge green">Very Achievable</span></td>
+                  </tr>
+                  <tr style="background: #EFF6FF;">
+                    <td><strong>1 : 3</strong></td>
+                    <td><strong>25.0% Win Rate</strong></td>
+                    <td><span class="badge blue">High Edge</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>1 : 5</strong></td>
+                    <td><strong>16.7% Win Rate</strong></td>
+                    <td><span class="badge purple">Exceptional</span></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="simple-callout callout-green" style="margin-top: 14px; font-size: 14px; padding: 12px 16px;">
+                <strong>Golden Rule:</strong> Reject any trade setup that yields less than a <strong>1:2 RRR</strong>. Never risk $1 to make $0.80.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide-footer">
+          <div class="slide-footer-left">AUPP Trading Club • Risk Series</div>
+          <div class="slide-footer-right">
+            <span>Risk-to-Reward (RRR)</span>
+            <span class="slide-number-badge">08</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SLIDE 9: ANATOMY OF A TRADE SETUP
+           ========================================== -->
+      <section class="slide" id="slide-9">
+        <div class="slide-header">
+          <div class="slide-title-group">
+            <div class="slide-pretitle">Step 03 • Trade Anatomy</div>
+            <h2 class="slide-title">Stop Loss &amp; Take Profit on the Chart</h2>
+            <div class="title-underline"></div>
+          </div>
+          <div class="slide-header-brand">
+            <img src="assets/horizontal.png" alt="AUPP Logo" class="slide-header-logo">
+          </div>
+        </div>
+
+        <div class="slide-body">
+          <div class="split-grid-55-45">
+            <div class="chart-container">
+              <div class="chart-header">
+                <span class="chart-title-tag">
+                  <span class="legend-dot green"></span> Long Trade Execution: 1R Risk vs 3R Take Profit
+                </span>
+                <div class="chart-tabs">
+                  <button class="chart-tab active" onclick="setChartMode('svgTradeAnatomy', 'both', this)">Both</button>
+                  <button class="chart-tab" onclick="setChartMode('svgTradeAnatomy', 'candles', this)">Candles</button>
+                  <button class="chart-tab" onclick="setChartMode('svgTradeAnatomy', 'line', this)">Line</button>
+                </div>
+              </div>
+
+              <div class="chart-svg-wrapper">
+                <svg id="svgTradeAnatomy" width="100%" height="280" viewBox="0 0 540 280">
+                  <!-- Background Shading for Zones -->
+                  <!-- Green Reward Zone (1:3 Target) -->
+                  <rect x="220" y="38" width="280" height="122" fill="rgba(0, 168, 104, 0.12)" stroke="#00A868" stroke-width="1.5" stroke-dasharray="3,3" />
+                  <text x="360" y="105" font-family="Montserrat" font-size="15" font-weight="800" fill="#00A868" text-anchor="middle">
+                    REWARD ZONE: +3R (+$300)
+                  </text>
+
+                  <!-- Red Risk Zone (1R Invalidation) -->
+                  <rect x="220" y="160" width="280" height="48" fill="rgba(229, 62, 62, 0.12)" stroke="#E53E3E" stroke-width="1.5" stroke-dasharray="3,3" />
+                  <text x="360" y="190" font-family="Montserrat" font-size="13" font-weight="800" fill="#C8102E" text-anchor="middle">
+                    RISK ZONE: -1R (-$100)
+                  </text>
+
+                  <!-- Key Lines -->
+                  <!-- Take Profit Line -->
+                  <line x1="45" y1="38" x2="515" y2="38" stroke="#00A868" stroke-width="2.5" />
+                  <rect x="415" y="25" width="100" height="24" fill="#00A868" rx="4" />
+                  <text x="465" y="41" font-family="Montserrat" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle">TP: 1.0950 (+60p)</text>
+
+                  <!-- Entry Line -->
+                  <line x1="45" y1="160" x2="515" y2="160" stroke="#2563EB" stroke-width="2.5" />
+                  <rect x="415" y="148" width="100" height="24" fill="#2563EB" rx="4" />
+                  <text x="465" y="164" font-family="Montserrat" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle">ENTRY: 1.0890</text>
+
+                  <!-- Stop Loss Line -->
+                  <line x1="45" y1="208" x2="515" y2="208" stroke="#E53E3E" stroke-width="2.5" />
+                  <rect x="415" y="196" width="100" height="24" fill="#E53E3E" rx="4" />
+                  <text x="465" y="212" font-family="Montserrat" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle">SL: 1.0870 (-20p)</text>
+
+                  <!-- Candlestick Layer -->
+                  <g class="layer-candlesticks">
+                    <!-- Candle 1: Downtrend bearish -->
+                    <line x1="75" y1="85" x2="75" y2="160" stroke="#E53E3E" stroke-width="1.5" />
+                    <rect x="68" y="95" width="14" height="55" fill="#E53E3E" rx="1" />
+
+                    <!-- Candle 2: Lower wick tap POI floor -->
+                    <line x1="115" y1="125" x2="115" y2="202" stroke="#00A868" stroke-width="1.5" />
+                    <rect x="108" y="135" width="14" height="45" fill="#00A868" rx="1" />
+
+                    <!-- Candle 3: Hammer rejection at Entry -->
+                    <line x1="155" y1="145" x2="155" y2="205" stroke="#00A868" stroke-width="1.5" />
+                    <rect x="148" y="150" width="14" height="22" fill="#00A868" rx="1" />
+
+                    <!-- Candle 4: Strong bullish expansion (Entry executed) -->
+                    <line x1="235" y1="125" x2="235" y2="170" stroke="#00A868" stroke-width="1.5" />
+                    <rect x="228" y="130" width="14" height="35" fill="#00A868" rx="1" />
+
+                    <!-- Candle 5: Bullish push into reward zone -->
+                    <line x1="275" y1="85" x2="275" y2="145" stroke="#00A868" stroke-width="1.5" />
+                    <rect x="268" y="90" width="14" height="45" fill="#00A868" rx="1" />
+
+                    <!-- Candle 6: Small pullback -->
+                    <line x1="315" y1="95" x2="315" y2="135" stroke="#E53E3E" stroke-width="1.5" />
+                    <rect x="308" y="100" width="14" height="24" fill="#E53E3E" rx="1" />
+
+                    <!-- Candle 7: Expansion towards target -->
+                    <line x1="355" y1="45" x2="355" y2="115" stroke="#00A868" stroke-width="1.5" />
+                    <rect x="348" y="55" width="14" height="50" fill="#00A868" rx="1" />
+
+                    <!-- Candle 8: Hits Take Profit Target 🎯 -->
+                    <line x1="395" y1="34" x2="395" y2="75" stroke="#00A868" stroke-width="1.5" />
+                    <rect x="388" y="36" width="14" height="32" fill="#00A868" rx="1" />
+                  </g>
+
+                  <!-- Line Graph Layer -->
+                  <g class="layer-linegraph">
+                    <path d="M 75 125 L 115 160 L 155 162 L 235 150 L 275 115 L 315 115 L 355 80 L 395 38" 
+                          fill="none" stroke="#0D1F3C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <circle cx="155" cy="160" r="5" fill="#2563EB" stroke="#FFFFFF" stroke-width="2" />
+                    <circle cx="395" cy="38" r="6" fill="#00A868" stroke="#FFFFFF" stroke-width="2" />
+                  </g>
+
+                  <!-- Support Floor Anchor -->
+                  <rect x="45" y="204" width="140" height="9" fill="#CBD5E1" rx="2" />
+                  <text x="115" y="228" font-family="Montserrat" font-size="11" font-weight="700" fill="#64748B" text-anchor="middle">POI Structural Low</text>
+                </svg>
+              </div>
+              <div class="chart-legend-row">
+                <div><span class="legend-dot green"></span> TP: Target Liquidity Pool</div>
+                <div><span class="legend-dot blue"></span> Entry: POI Confirmation</div>
+                <div><span class="legend-dot red"></span> SL: Structural Invalidation</div>
+              </div>
+            </div>
+
+            <div class="clean-card navy-top">
+              <div class="card-title" style="font-size: 19px; margin-bottom: 8px;">
+                <span>The 3 Invariable Milestones</span>
+                <span class="badge navy">Execution</span>
+              </div>
+              <ul class="bullet-list">
+                <li>
+                  <span class="bullet-icon check">1</span>
+                  <div>
+                    <strong>1. Technical Invalidation (Stop Loss):</strong>
+                    Placed strictly behind market structure (swing low or order block). If this price level breaks, your trade hypothesis is dead.
+                  </div>
+                </li>
+                <li>
+                  <span class="bullet-icon check">2</span>
+                  <div>
+                    <strong>2. Entry Trigger:</strong>
+                    Occurs only after price reaches your POI and confirms with a rejection wick or lower timeframe shift.
+                  </div>
+                </li>
+                <li>
+                  <span class="bullet-icon check">3</span>
+                  <div>
+                    <strong>3. Objective Target (Take Profit):</strong>
+                    Anchored at opposing liquidity pools (equal highs, previous swing highs), yielding a minimum of <strong>1:2.5 or 1:3 RRR</strong>.
+                  </div>
+                </li>
+              </ul>
+              <div class="simple-callout" style="margin-top: 16px; font-size: 14px;">
+                <strong>Rule:</strong> Never enter a trade first, then search where to put your stop loss. The stop loss comes <em>first</em>.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide-footer">
+          <div class="slide-footer-left">AUPP Trading Club • Risk Series</div>
+          <div class="slide-footer-right">
+            <span>Trade Anatomy</span>
+            <span class="slide-number-badge">09</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SLIDE 10: THE POSITION SIZING FORMULA
+           ========================================== -->
+      <section class="slide" id="slide-10">
+        <div class="slide-header">
+          <div class="slide-title-group">
+            <div class="slide-pretitle">Step 04 • Position Sizing</div>
+            <h2 class="slide-title">How to Pick Your Lot Size</h2>
+            <div class="title-underline"></div>
+          </div>
+          <div class="slide-header-brand">
+            <img src="assets/horizontal.png" alt="AUPP Logo" class="slide-header-logo">
+          </div>
+        </div>
+
+        <div class="slide-body">
+          <div class="split-grid-50-50">
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+              <div class="formula-card">
+                <div class="formula-header">The Master Lot Size Formula</div>
+                <div class="formula-display">
+                  Lot Size = &frac{Account Balance &times; Risk %}{Stop Loss (Pips) &times; Pip Value}
+                </div>
+                <div class="formula-notes">
+                  &bull; <strong>Standard Forex:</strong> 1.00 Lot = $10 per pip on EUR/USD<br>
+                  &bull; <strong>Micro Forex:</strong> 0.01 Lot = $0.10 per pip
+                </div>
+              </div>
+
+              <div class="clean-card green-top" style="padding: 20px 24px;">
+                <div class="card-title" style="font-size: 17px; color: var(--bull-green);">
+                  <span>Step-by-Step Practical Example</span>
+                  <span class="badge green">EUR/USD Setup</span>
+                </div>
+                <ul class="bullet-list" style="margin-top: 8px; gap: 8px; font-size: 14.5px;">
+                  <li><strong>1. Account Balance:</strong> $1,000 | <strong>Risk Cap:</strong> 1% ($10 risk)</li>
+                  <li><strong>2. Technical Invalidation:</strong> 20 pips away from Entry</li>
+                  <li><strong>3. Pip Value per Lot:</strong> $10.00 / pip for 1.00 standard lot</li>
+                  <li>
+                    <strong>4. Calculation:</strong><br>
+                    $\text{Lot Size} = \frac{\$10}{20 \times \$10} = \frac{\$10}{\$200} = \mathbf{0.05 \text{ Lots}}$
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="chart-container">
+              <div class="chart-header">
+                <span class="chart-title-tag">
+                  <span class="legend-dot navy"></span> Quick Reference Matrix (1% Risk Cap)
+                </span>
+                <span class="badge navy">Standard Pairs</span>
+              </div>
+
+              <table class="styled-table" style="font-size: 13.5px;">
+                <thead>
+                  <tr>
+                    <th>Account ($)</th>
+                    <th>1% Risk ($)</th>
+                    <th>SL: 15 Pips</th>
+                    <th>SL: 25 Pips</th>
+                    <th>SL: 40 Pips</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>$500</strong></td>
+                    <td>$5.00</td>
+                    <td><strong>0.03 Lots</strong></td>
+                    <td><strong>0.02 Lots</strong></td>
+                    <td><strong>0.01 Lots</strong></td>
+                  </tr>
+                  <tr style="background: #F0FDF4;">
+                    <td><strong>$1,000</strong></td>
+                    <td>$10.00</td>
+                    <td><strong>0.06 Lots</strong></td>
+                    <td><strong>0.04 Lots</strong></td>
+                    <td><strong>0.02 Lots</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>$2,500</strong></td>
+                    <td>$25.00</td>
+                    <td><strong>0.16 Lots</strong></td>
+                    <td><strong>0.10 Lots</strong></td>
+                    <td><strong>0.06 Lots</strong></td>
+                  </tr>
+                  <tr style="background: #EFF6FF;">
+                    <td><strong>$5,000</strong></td>
+                    <td>$50.00</td>
+                    <td><strong>0.33 Lots</strong></td>
+                    <td><strong>0.20 Lots</strong></td>
+                    <td><strong>0.12 Lots</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>$10,000</strong></td>
+                    <td>$100.00</td>
+                    <td><strong>0.66 Lots</strong></td>
+                    <td><strong>0.40 Lots</strong></td>
+                    <td><strong>0.25 Lots</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="simple-callout callout-navy" style="margin-top: 16px; font-size: 13.5px; padding: 12px 16px;">
+                <strong>Key Insight:</strong> When your stop loss is wider, your lot size shrinks. When your stop loss is tight, your lot size increases. <em>Your dollar risk remains identical ($10).</em>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide-footer">
+          <div class="slide-footer-left">AUPP Trading Club • Risk Series</div>
+          <div class="slide-footer-right">
+            <span>Position Sizing</span>
+            <span class="slide-number-badge">10</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SLIDE 11: THE MATHEMATICS OF DRAWDOWN
+           ========================================== -->
+      <section class="slide" id="slide-11">
+        <div class="slide-header">
+          <div class="slide-title-group">
+            <div class="slide-pretitle">Step 05 • Drawdown Control</div>
+            <h2 class="slide-title">Why Small Losses Save Your Account</h2>
+            <div class="title-underline"></div>
+          </div>
+          <div class="slide-header-brand">
+            <img src="assets/horizontal.png" alt="AUPP Logo" class="slide-header-logo">
+          </div>
+        </div>
+
+        <div class="slide-body">
+          <div class="split-grid-55-45">
+            <div class="chart-container">
+              <div class="chart-header">
+                <span class="chart-title-tag">
+                  <span class="legend-dot red"></span> The Asymmetric Drawdown Recovery Curve
+                </span>
+                <span class="badge red">Exponential Ruin</span>
+              </div>
+
+              <div class="chart-svg-wrapper">
+                <svg width="100%" height="280" viewBox="0 0 540 280">
+                  <!-- Axes -->
+                  <line x1="60" y1="230" x2="505" y2="230" stroke="#475569" stroke-width="2.5" />
+                  <line x1="60" y1="230" x2="60" y2="30" stroke="#475569" stroke-width="2.5" />
+
+                  <!-- Axis Labels -->
+                  <text x="280" y="265" font-family="Montserrat" font-size="12" font-weight="700" fill="#475569" text-anchor="middle">
+                    Account Loss / Drawdown (%)
+                  </text>
+                  <text x="25" y="130" font-family="Montserrat" font-size="12" font-weight="700" fill="#475569" text-anchor="middle" transform="rotate(-90 25 130)">
+                    Gain Needed to Recover (%)
+                  </text>
+
+                  <!-- Grid Marks -->
+                  <line x1="60" y1="190" x2="505" y2="190" stroke="#E2E8F0" stroke-dasharray="3,3" />
+                  <text x="50" y="194" font-family="Montserrat" font-size="11" fill="#64748B" text-anchor="end">25%</text>
+
+                  <line x1="60" y1="130" x2="505" y2="130" stroke="#E2E8F0" stroke-dasharray="3,3" />
+                  <text x="50" y="134" font-family="Montserrat" font-size="11" fill="#64748B" text-anchor="end">100%</text>
+
+                  <line x1="60" y1="55" x2="505" y2="55" stroke="#E2E8F0" stroke-dasharray="3,3" />
+                  <text x="50" y="59" font-family="Montserrat" font-size="11" fill="#64748B" text-anchor="end">300%</text>
+
+                  <!-- X ticks: 10%, 20%, 30%, 50%, 75%, 90% -->
+                  <text x="105" y="248" font-family="Montserrat" font-size="11" fill="#64748B" text-anchor="middle">10%</text>
+                  <text x="150" y="248" font-family="Montserrat" font-size="11" fill="#64748B" text-anchor="middle">20%</text>
+                  <text x="195" y="248" font-family="Montserrat" font-size="11" fill="#64748B" text-anchor="middle">30%</text>
+                  <text x="280" y="248" font-family="Montserrat" font-size="12" font-weight="800" fill="#E53E3E" text-anchor="middle">50%</text>
+                  <text x="390" y="248" font-family="Montserrat" font-size="11" fill="#64748B" text-anchor="middle">75%</text>
+                  <text x="470" y="248" font-family="Montserrat" font-size="11" fill="#64748B" text-anchor="middle">90%</text>
+
+                  <!-- Exponential Curve -->
+                  <path d="M 60 230 Q 150 220, 195 208 T 280 130 T 390 55 T 470 30" 
+                        fill="none" stroke="#C8102E" stroke-width="4" />
+
+                  <!-- Critical Point: 50% loss = 100% recovery -->
+                  <circle cx="280" cy="130" r="7" fill="#C8102E" stroke="#FFFFFF" stroke-width="2.5" />
+                  <rect x="225" y="90" width="150" height="30" fill="#0D1F3C" rx="5" />
+                  <text x="300" y="110" font-family="Montserrat" font-size="12" font-weight="800" fill="#FFFFFF" text-anchor="middle">
+                    -50% Loss &rarr; +100% Gain!
+                  </text>
+
+                  <!-- Safe Zone Shading -->
+                  <rect x="60" y="190" width="90" height="40" fill="rgba(0, 168, 104, 0.15)" />
+                  <text x="105" y="215" font-family="Montserrat" font-size="11" font-weight="800" fill="#00A868" text-anchor="middle">SAFE ZONE</text>
+                </svg>
+              </div>
+            </div>
+
+            <div class="clean-card red-top">
+              <div class="card-title" style="font-size: 19px; margin-bottom: 8px;">
+                <span>The Recovery Trap Matrix</span>
+                <span class="badge red">Mathematical Reality</span>
+              </div>
+              <table class="styled-table" style="font-size: 13.5px;">
+                <thead>
+                  <tr>
+                    <th>Loss Incurred</th>
+                    <th>Capital Left ($1k)</th>
+                    <th>Gain Needed</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="background: #F0FDF4;">
+                    <td><strong style="color: var(--bull-green);">-10% Loss</strong></td>
+                    <td>$900</td>
+                    <td><strong>+11.1% Gain</strong> (Normal)</td>
+                  </tr>
+                  <tr>
+                    <td><strong style="color: var(--gold-accent);">-20% Loss</strong></td>
+                    <td>$800</td>
+                    <td><strong>+25.0% Gain</strong> (Manageable)</td>
+                  </tr>
+                  <tr>
+                    <td><strong style="color: #D97706);">-30% Loss</strong></td>
+                    <td>$700</td>
+                    <td><strong>+42.9% Gain</strong> (Hard)</td>
+                  </tr>
+                  <tr style="background: #FEF2F2;">
+                    <td><strong style="color: var(--bear-red);">-50% Loss</strong></td>
+                    <td>$500</td>
+                    <td><strong style="color: var(--bear-red);">+100.0% Gain (Double!)</strong></td>
+                  </tr>
+                  <tr style="background: #FFF5F5;">
+                    <td><strong style="color: var(--bear-red);">-75% Loss</strong></td>
+                    <td>$250</td>
+                    <td><strong style="color: var(--bear-red);">+300.0% Gain (Near Impossible)</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="simple-callout" style="margin-top: 14px; font-size: 13.5px; padding: 12px 16px;">
+                <strong>The Lesson:</strong> Losses are linear to incur, but recovery is exponential. Never let your account drop into the deep danger zone!
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide-footer">
+          <div class="slide-footer-left">AUPP Trading Club • Risk Series</div>
+          <div class="slide-footer-right">
+            <span>Drawdown Math</span>
+            <span class="slide-number-badge">11</span>
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- ==========================================
+           SLIDE 12: LIVE INTERACTIVE CALCULATOR
+           ========================================== -->
+      <section class="slide" id="slide-12">
+        <div class="slide-header">
+          <div class="slide-title-group">
+            <div class="slide-pretitle">Live Classroom Tool</div>
+            <h2 class="slide-title">Interactive Position Size &amp; Risk Calculator</h2>
+            <div class="title-underline"></div>
+          </div>
+          <div class="slide-header-brand">
+            <img src="assets/horizontal.png" alt="AUPP Logo" class="slide-header-logo">
+          </div>
+        </div>
+
+        <div class="slide-body">
+          <div class="split-grid-50-50">
+            <!-- Left: Inputs -->
+            <div class="calculator-box">
+              <div class="chart-header">
+                <span class="chart-title-tag">
+                  <span class="legend-dot navy"></span> Trade Parameters Input
+                </span>
+                <span class="badge navy">Live Computing</span>
+              </div>
+
+              <div class="calc-grid" style="margin-top: 10px;">
+                <div class="calc-input-group">
+                  <label class="calc-label" for="calcBalance">Account Balance ($)</label>
+                  <input type="number" id="calcBalance" class="calc-input" value="1000" min="10" step="50">
+                  <div class="preset-pills">
+                    <span class="preset-pill" onclick="setCalcPreset(500, 1.0, 20)">$500</span>
+                    <span class="preset-pill" onclick="setCalcPreset(1000, 1.0, 20)">$1,000</span>
+                    <span class="preset-pill" onclick="setCalcPreset(5000, 1.0, 25)">$5,000</span>
+                    <span class="preset-pill" onclick="setCalcPreset(10000, 1.0, 30)">$10,000</span>
+                  </div>
+                </div>
+
+                <div class="calc-input-group">
+                  <label class="calc-label" for="calcRisk">Risk Percentage (%)</label>
+                  <input type="number" id="calcRisk" class="calc-input" value="1.0" min="0.1" max="10" step="0.5">
+                  <div class="preset-pills">
+                    <span class="preset-pill" onclick="document.getElementById('calcRisk').value = 1.0; document.getElementById('calcRisk').dispatchEvent(new Event('input'))">1.0%</span>
+                    <span class="preset-pill" onclick="document.getElementById('calcRisk').value = 1.5; document.getElementById('calcRisk').dispatchEvent(new Event('input'))">1.5%</span>
+                    <span class="preset-pill" onclick="document.getElementById('calcRisk').value = 2.0; document.getElementById('calcRisk').dispatchEvent(new Event('input'))">2.0%</span>
+                  </div>
+                </div>
+
+                <div class="calc-input-group">
+                  <label class="calc-label" for="calcSl">Stop Loss (Pips / Points)</label>
+                  <input type="number" id="calcSl" class="calc-input" value="20" min="1" step="5">
+                </div>
+
+                <div class="calc-input-group">
+                  <label class="calc-label" for="calcAsset">Asset / Pip Value</label>
+                  <select id="calcAsset" class="calc-input">
+                    <option value="10" selected>Forex Majors (EUR/USD $10/pip)</option>
+                    <option value="1">Gold (XAU/USD $1/0.10 tick)</option>
+                    <option value="10">US Indices / JPY ($10/pip standard)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="simple-callout" style="margin-top: 14px; font-size: 13.5px; padding: 12px 16px;">
+                <strong>Tip for Mentors:</strong> Adjust inputs during lecture to demonstrate how wider stop losses automatically shrink position lot sizing while preserving exact dollar risk.
+              </div>
+            </div>
+
+            <!-- Right: Outputs -->
+            <div class="calc-results-panel">
+              <div class="chart-header" style="border-color: #BFDBFE;">
+                <span class="chart-title-tag">
+                  <span class="legend-dot green"></span> Recommended Execution Plan
+                </span>
+                <span class="badge green" id="outSafetyBadge">Safe (Institutional 1%)</span>
+              </div>
+
+              <div style="display: flex; flex-direction: column; gap: 10px; margin: 8px 0;">
+                <div class="result-card">
+                  <span class="result-title">Total Cash at Risk:</span>
+                  <span class="result-value accent-red" id="outRiskAmount">$10.00</span>
+                </div>
+
+                <div class="result-card" style="background: #F0FDF4; border-color: #86EFAC;">
+                  <span class="result-title" style="font-weight: 700; color: #166534;">Recommended Lot Size:</span>
+                  <span class="result-value accent-green" id="outLotSize" style="font-size: 22px;">0.05 Lots</span>
+                </div>
+
+                <div class="result-card">
+                  <span class="result-title">Potential Profit at 1:2 RRR:</span>
+                  <span class="result-value accent-blue" id="outReward12">+$20.00</span>
+                </div>
+
+                <div class="result-card">
+                  <span class="result-title">Potential Profit at 1:3 RRR:</span>
+                  <span class="result-value accent-green" id="outReward13">+$30.00</span>
+                </div>
+              </div>
+
+              <div style="font-size: 13px; color: var(--text-muted); text-align: center; border-top: 1px dashed #CBD5E1; padding-top: 10px;">
+                Institutional Rule: <em>Enter only with the computed lot size. Never round up to an arbitrary 0.10.</em>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide-footer">
+          <div class="slide-footer-left">AUPP Trading Club • Risk Series</div>
+          <div class="slide-footer-right">
+            <span>Risk Calculator</span>
+            <span class="slide-number-badge">12</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SLIDE 13: 4 GOLDEN RULES OF RISK
+           ========================================== -->
+      <section class="slide" id="slide-13">
+        <div class="slide-header">
+          <div class="slide-title-group">
+            <div class="slide-pretitle">Mentee Discipline</div>
+            <h2 class="slide-title">4 Golden Rules of Risk Management</h2>
+            <div class="title-underline"></div>
+          </div>
+          <div class="slide-header-brand">
+            <img src="assets/horizontal.png" alt="AUPP Logo" class="slide-header-logo">
+          </div>
+        </div>
+
+        <div class="slide-body">
+          <div class="content-grid-2">
+            <div class="clean-card red-top">
+              <div class="card-num" style="color: var(--red-accent);">01</div>
+              <div class="card-title" style="font-size: 18px;">Never Move Your Stop Loss Further</div>
+              <p class="card-desc">
+                Widening a stop loss because "it will come back" is pure hopium. Once price reaches invalidation, the setup is dead. Take the small loss like a professional and move on.
+              </p>
+            </div>
+
+            <div class="clean-card navy-top">
+              <div class="card-num" style="color: var(--navy-primary);">02</div>
+              <div class="card-title" style="font-size: 18px;">Maximum Daily Loss Limit (2 Losses)</div>
+              <p class="card-desc">
+                If you lose 2 trades in a single day (-2%), close your trading platform immediately. Go outside, study charts, or rest. Never fight an unfavorable market session.
+              </p>
+            </div>
+
+            <div class="clean-card gold-top">
+              <div class="card-num" style="color: var(--gold-accent);">03</div>
+              <div class="card-title" style="font-size: 18px;">Risk Is Defined Before Entry, Never After</div>
+              <p class="card-desc">
+                Before pressing Buy or Sell, you must already know the exact Dollar risk, Lot size, Invalidation point, and Take Profit target. Zero surprises allowed.
+              </p>
+            </div>
+
+            <div class="clean-card green-top">
+              <div class="card-num" style="color: var(--bull-green);">04</div>
+              <div class="card-title" style="font-size: 18px;">Leverage Is a Tool, Not Capital</div>
+              <p class="card-desc">
+                High broker leverage (1:100, 1:500) magnifies human emotion and accelerates account liquidation. Position sizing makes leverage irrelevant because risk is fixed at 1%.
+              </p>
+            </div>
+          </div>
+
+          <div class="simple-callout callout-green" style="font-size: 16px;">
+            <strong>Mentor Mantra:</strong> <em>"Professional traders are professional risk managers who happen to trade."</em>
+          </div>
+        </div>
+
+        <div class="slide-footer">
+          <div class="slide-footer-left">AUPP Trading Club • Risk Series</div>
+          <div class="slide-footer-right">
+            <span>Golden Rules</span>
+            <span class="slide-number-badge">13</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SLIDE 14: MASTER INTEGRATION & CLOSING
+           ========================================== -->
+      <section class="slide" id="slide-14">
+        <div class="cover-layout">
+          <img src="assets/logo.png" alt="AUPP Trading Club Logo" class="cover-logo" style="width: 90px; height: 90px; margin-bottom: 14px;">
+          <div class="cover-badge" style="margin-bottom: 12px;">Mentee Master Blueprint</div>
+          <h2 class="cover-title" style="font-size: 44px; margin-bottom: 6px;">The 3 Pillars of Trading</h2>
+          <div class="cover-underline" style="margin: 10px auto 20px auto;"></div>
+
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1050px; margin-bottom: 26px; text-align: left;">
+            <div class="clean-card navy-top" style="padding: 18px 22px;">
+              <div style="font-size: 12px; font-weight: 700; color: var(--navy-secondary); text-transform: uppercase;">Pillar 1</div>
+              <div style="font-size: 17px; font-weight: 800; color: var(--navy-primary); margin: 6px 0;">Strategy &amp; Market Structure</div>
+              <p style="font-size: 14px; color: var(--text-body);">Finding high-probability POIs, order blocks, and trend continuations.</p>
+            </div>
+
+            <div class="clean-card red-top" style="padding: 18px 22px;">
+              <div style="font-size: 12px; font-weight: 700; color: var(--red-accent); text-transform: uppercase;">Pillar 2</div>
+              <div style="font-size: 17px; font-weight: 800; color: var(--red-accent); margin: 6px 0;">Risk Management (Mastered)</div>
+              <p style="font-size: 14px; color: var(--text-body);">Position sizing, the 1% rule, drawdown control, and 1:3 RRR execution.</p>
+            </div>
+
+            <div class="clean-card green-top" style="padding: 18px 22px;">
+              <div style="font-size: 12px; font-weight: 700; color: var(--bull-green); text-transform: uppercase;">Pillar 3</div>
+              <div style="font-size: 17px; font-weight: 800; color: var(--bull-green); margin: 6px 0;">Psychology &amp; Discipline</div>
+              <p style="font-size: 14px; color: var(--text-body);">Accepting losses, emotional neutrality, eliminating greed, and journaling.</p>
+            </div>
+          </div>
+
+          <div style="font-size: 20px; font-weight: 800; color: var(--navy-primary); margin-bottom: 10px;">
+            Questions &amp; Discussion
+          </div>
+          <div style="display: flex; gap: 28px; font-size: 14px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em;">
+            <span>Protect Capital</span>
+            <span>•</span>
+            <span>Control Risk</span>
+            <span>•</span>
+            <span>Master The Math</span>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="slide-footer-left">American University of Phnom Penh • AUPP Trading Club</div>
+          <div class="slide-footer-right">
+            <span>Summary &amp; Q&amp;A</span>
+            <span class="slide-number-badge">14</span>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /presentation-stage -->
+  </div><!-- /presentation-viewport -->
+
+  <!-- Deck Floating Navigation Controls -->
+  <div class="deck-controls">
+    <button class="deck-btn" id="prevBtn" title="Previous Slide (← / PgUp / K)">
+      <span>◀</span> Prev
+    </button>
+    <div class="deck-counter" id="slideCounter">01 / 14</div>
+    <button class="deck-btn primary" id="nextBtn" title="Next Slide (→ / Space / PgDn / J)">
+      Next <span>▶</span>
+    </button>
+    <button class="deck-btn" id="gridBtn" title="Slide Overview Grid (G)">
+      <span>☷</span> Overview
+    </button>
+    <button class="deck-btn" id="fullscreenBtn" title="Toggle Fullscreen (F)">
+      <span>⛶</span> Fullscreen
+    </button>
+    <button class="deck-btn" id="printBtn" title="Export / Print to PDF (P / Ctrl+P)">
+      <span>⎙</span> Export PDF
+    </button>
+  </div>
+
+  <!-- Overview Modal -->
+  <div class="modal-overlay" id="overviewModal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div class="modal-title">Presentation Slide Overview</div>
+        <button class="modal-close-btn" id="modalCloseBtn">&times;</button>
+      </div>
+      <div class="modal-body" id="modalThumbnails">
+        <!-- Injected dynamically via script.js -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
